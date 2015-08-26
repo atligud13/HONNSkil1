@@ -9,4 +9,6 @@ public abstract class Shape implements Drawable {
     protected int x, y;
     protected Color color;
     public abstract void draw(Graphics g);
+    public abstract void setX(int x);
+    public abstract void setY(int y);
 }

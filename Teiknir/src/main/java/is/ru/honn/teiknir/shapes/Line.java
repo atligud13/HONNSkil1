@@ -7,15 +7,33 @@ import java.awt.*;
  */
 public class Line extends Shape {
 
-    public Line(int x, int y, Color color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
+    private int x2, y2;
+
+    public Line(int x, int y, int x2, int y2, Color color) {
+        super.x = x;
+        super.y = y;
+        this.x2 = x2;
+        this.y2 = y2;
+        super.color = color;
     }
 
+    @Override
     public void draw(Graphics g) {
-        System.out.println("Drawing line");
-        g.setColor(this.color);
-        g.drawLine(this.x, this.y, this.x + 100, this.y + 100);
+        g.setColor(super.color);
+        g.drawLine(super.x, super.y, this.x2, this.y2);
+    }
+
+    @Override
+    public void setX(int x) {
+        int moveBuffer = this.x2 - this.x;
+        this.x = x;
+        this.x2 = this.x + moveBuffer;
+    }
+
+    @Override
+    public void setY(int y) {
+        int moveBuffer = this.y2 - this.y;
+        this.y = y;
+        this.y2 = this.y + moveBuffer;
     }
 }

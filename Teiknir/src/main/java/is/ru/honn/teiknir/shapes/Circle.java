@@ -11,13 +11,24 @@ public class Circle extends Shape {
 
     public Circle(int radius, int x, int y, Color color) {
         this.radius = radius;
-        this.x = x;
-        this.y = y;
-        this.color = color;
+        super.x = x;
+        super.y = y;
+        super.color = color;
     }
 
+    @Override
     public void draw(Graphics g) {
-        System.out.println("Drawing circle");
-        g.drawOval(this.x - this.radius, this.y - this.radius, radius, radius);
+        g.setColor(super.color);
+        g.drawOval(super.x - this.radius, super.y - this.radius, this.radius, this.radius);
+    }
+
+    @Override
+    public void setX(int x) {
+        super.x = x;
+    }
+
+    @Override
+    public void setY(int y) {
+        super.y = y;
     }
 }

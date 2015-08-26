@@ -22,4 +22,14 @@ public class Rectangle extends Shape {
         g.setColor(this.color);
         g.drawRect(super.x, super.y, this.width, this.height);
     }
+
+    @Override
+    public void setX(int x) {
+        super.x = x;
+    }
+
+    @Override
+    public void setY(int y) {
+        super.y = y;
+    }
 }
