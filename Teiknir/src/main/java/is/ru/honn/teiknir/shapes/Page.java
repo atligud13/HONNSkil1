@@ -6,6 +6,8 @@ import java.util.Arrays;
 
 /**
  * Created by Atli Guðlaugsson on 26/08/2015.
+ * This class takes care of supervising the symbols
+ * that are on the canvas.
  */
 public class Page {
     ArrayList<Shape> drawObjects = new ArrayList<Shape>();

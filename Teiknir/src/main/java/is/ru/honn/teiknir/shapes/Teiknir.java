@@ -7,6 +7,9 @@ import java.awt.event.KeyListener;
 
 /**
  * Created by Atli Guðlaugsson on 26/08/2015.
+ * A simple drawing application, as of now all the
+ * symbols on it are predetermined but they can be moved
+ * around using the j m i l and q buttons.
  */
 public class Teiknir extends JPanel {
     private Page page = new Page();
