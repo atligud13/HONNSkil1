@@ -12,7 +12,7 @@ public class Page {
 
     public Page() {
         drawObjects.add(new Circle(100, 100, 200, Color.RED));
-        drawObjects.add(new Rectangle(300, 400, Color.BLUE));
+        drawObjects.add(new Rectangle(300, 400, 100, 200, Color.BLUE));
         drawObjects.add(new Line(300, 200, Color.BLACK));
         drawObjects.add(new Text("Atli", 450, 200, Color.GREEN));
     }
@@ -21,8 +21,8 @@ public class Page {
         drawObjects.add(object);
     }
 
-    public void drawAllObjects(Graphics g) {
-        for(Shape s : drawObjects) {
+    public void paint(Graphics g) {
+        for(Drawable s : drawObjects) {
             s.draw(g);
         }
     }

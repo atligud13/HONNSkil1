@@ -7,7 +7,7 @@ import java.awt.*;
  * Created by Atli Guðlaugsson on 26/08/2015.
  */
 public class Teiknir extends JPanel {
-    static Page page = new Page();
+    private Page page = new Page();
 
     public static void main (String[] argv)
     {
@@ -25,7 +25,7 @@ public class Teiknir extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        page.drawAllObjects(g);
+        page.paint(g);
     }
 
 }

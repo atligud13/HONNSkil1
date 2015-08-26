@@ -7,15 +7,19 @@ import java.awt.*;
  */
 public class Rectangle extends Shape {
 
-    public Rectangle(int x, int y, Color color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
+    private int width, height;
+
+    public Rectangle(int x, int y, int width, int height, Color color) {
+        super.x = x;
+        super.y = y;
+        this.width = width;
+        this.height = height;
+        super.color = color;
     }
 
+    @Override
     public void draw(Graphics g) {
-        System.out.println("Drawing rectangle");
         g.setColor(this.color);
-        g.drawRect(this.x, this.y, 5, 8);
+        g.drawRect(super.x, super.y, this.width, this.height);
     }
 }
