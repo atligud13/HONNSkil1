@@ -98,6 +98,11 @@ public class Calculator
         evaluate(stack);
     }
 
+    /**
+     * Helper function that takes care of printing out the stack in
+     * the right format.
+     * @param stack
+     */
     public void printStack(Stack<String> stack) {
         System.out.print("[");
         if(!stack.isEmpty()) System.out.print(stack.elementAt(0));
