@@ -1,5 +1,9 @@
 package is.ru.honn.teiknir.shapes;
 
+import json.FileLoadException;
+import json.FileLoader;
+import json.JsonConverter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -23,10 +27,36 @@ public class Teiknir extends JPanel {
         f.setSize(500, 500);
 
         Teiknir panel = new Teiknir ();
+
+        /**
+         * If we receive a command line argument we assume that we're
+         * being handed a json file and try and parse that.
+         */
+        if(argv.length > 0) {
+            panel.createPageFromFile(argv[0]);
+        }
+
         f.getContentPane().add(panel);
         f.setVisible(true);
         panel.setFocusable(true);
         panel.initListeners();
+
+
+    }
+
+    public void createPageFromFile(String filename) {
+        FileLoader loader = new FileLoader();
+        JsonConverter converter = new JsonConverter();
+        try
+        {
+            String obj = loader.loadFileName(filename);
+            this.page = converter.parseJson(obj);
+            System.out.println(this.page.drawObjects);
+        }
+        catch(FileLoadException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**

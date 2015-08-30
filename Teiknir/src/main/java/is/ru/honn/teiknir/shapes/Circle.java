@@ -7,10 +7,12 @@ import java.awt.*;
  */
 public class Circle extends Shape {
 
-    private int radius;
+    private int width;
+    private int height;
 
-    public Circle(int radius, int x, int y, Color color) {
-        this.radius = radius;
+    public Circle(int width, int height, int x, int y, Color color) {
+        this.width = width;
+        this.height = height;
         super.x = x;
         super.y = y;
         super.color = color;
@@ -19,7 +21,7 @@ public class Circle extends Shape {
     @Override
     public void draw(Graphics g) {
         g.setColor(super.color);
-        g.drawOval(super.x - this.radius, super.y - this.radius, this.radius, this.radius);
+        g.drawOval(super.x, super.y, this.width, this.height);
     }
 
     @Override

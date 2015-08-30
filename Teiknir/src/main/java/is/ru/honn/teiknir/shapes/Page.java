@@ -13,16 +13,9 @@ public class Page {
     ArrayList<Shape> drawObjects = new ArrayList<Shape>();
     Shape selected;
 
-    public Page() {
-        drawObjects.add(new Circle(100, 100, 200, Color.RED));
-        drawObjects.add(new Rectangle(300, 400, 100, 200, Color.BLUE));
-        drawObjects.add(new Line(300, 200, 400, 300, Color.BLACK));
-        drawObjects.add(new Text("Atli", 450, 200, Color.GREEN));
-        selected = drawObjects.get(0);
-    }
-
     public void addObject(Shape object) {
         drawObjects.add(object);
+        if(this.selected == null) { selected = drawObjects.get(0); }
     }
 
     public void paint(Graphics g) {
