@@ -18,6 +18,10 @@ public class TestParseFile {
         System.out.println("");
         System.out.println("----Testing with external file-----");
         tester.testWithExternalFile();
+
+        System.out.println("");
+        System.out.println("----Testing League parser------");
+        tester.testLeagueParser();
     }
 
     public void testWithLocalFile() {
@@ -35,5 +39,18 @@ public class TestParseFile {
     public void testWithExternalFile() {
         String content = clientRequest.getRequest("http://olafurandri.com/honn/teams.json");
         parser.parseAndPrint(content);
+    }
+
+    public void testLeagueParser() {
+        try
+        {
+            String content = clientRequest.getFileContent("teams.json");
+            League league = parser.parseTeams(content);
+            league.printLeagueTable();
+        }
+        catch(RequestException e)
+        {
+            e.printStackTrace();
+        }
     }
 }
