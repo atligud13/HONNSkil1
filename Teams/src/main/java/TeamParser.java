@@ -97,6 +97,12 @@ public class TeamParser {
 
     }
 
+    /**
+     * Helper function for parsing the date
+     * into the correct format.
+     * @param date
+     * @return
+     */
     public Date parseDate(String date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'kk:mm:ss", Locale.ENGLISH);
         try  { return format.parse(date); }
