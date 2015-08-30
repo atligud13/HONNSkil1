@@ -7,14 +7,15 @@ public class TestParseFile {
      * @param args
      */
     public static void main(String[] args) {
-        FileLoader loader = new FileLoader();
+        ClientRequest clientRequest = new ClientRequest();
         TeamParser parser = new TeamParser();
+
         try
         {
-            String obj = loader.loadFileName("teams.json");
-            parser.parseAndPrint(obj);
+            String content = clientRequest.getFileContent("teams.json");
+            parser.parseAndPrint(content);
         }
-        catch(FileLoadException e)
+        catch(RequestException e)
         {
             e.printStackTrace();
         }
