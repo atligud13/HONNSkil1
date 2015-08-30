@@ -153,7 +153,7 @@ public class TeamParser {
                         String name = (String)jsonTeam.get("displayName");
                         String abb = (String)jsonTeam.get("abbreviation");
                         String venue = (String)jsonVenue.get("name");
-                        String city = (String)jsonTeam.get("location");
+                        String city = (String)jsonVenue.get("city");
 
                         league.teams.add(new Team(name, abb, venue, city));
                     }
